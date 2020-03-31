@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f10f2a88-2191-4ad6-bf66-d9eaa82a272a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/digest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1YXPwNZsTe8eYrhHEPdwTbl8yV4" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/prepping" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\tasker-javascript\prepping" />
+      <recent name="D:\Projects\tasker-javascript\everything\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\tasker-javascript\prepping" />
+      <recent name="D:\Projects\tasker-javascript\retine" />
+      <recent name="D:\Projects\tasker-javascript\gesundheit" />
+      <recent name="D:\Projects\tasker-javascript" />
+      <recent name="C:\Users\Edwin\IdeaProjects\sample" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f10f2a88-2191-4ad6-bf66-d9eaa82a272a" name="Default Changelist" comment="" />
+      <created>1583086203420</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583086203420</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="789" y="359" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583086215622">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="789" y="359" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1583086215622" />
+    <state x="533" y="239" key="SettingsEditor" timestamp="1584109569624">
+      <screen x="0" y="40" width="2048" height="1112" />
+    </state>
+    <state x="533" y="199" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1583086301533" />
+    <state x="533" y="239" key="SettingsEditor/0.40.2048.1112@0.40.2048.1112" timestamp="1584109569624" />
+    <state x="726" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1583086319764">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="726" y="380" key="com.intellij.ide.util.TipDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1583086319764" />
+    <state x="465" y="217" key="new project wizard" timestamp="1584187822659">
+      <screen x="0" y="40" width="2048" height="1112" />
+    </state>
+    <state x="465" y="217" key="new project wizard/0.40.2048.1112@0.40.2048.1112" timestamp="1584187822659" />
+    <state x="687" y="283" width="672" height="678" key="search.everywhere.popup" timestamp="1584187925657">
+      <screen x="0" y="40" width="2048" height="1112" />
+    </state>
+    <state x="687" y="283" width="672" height="678" key="search.everywhere.popup/0.40.2048.1112@0.40.2048.1112" timestamp="1584187925657" />
+  </component>
+</project>
