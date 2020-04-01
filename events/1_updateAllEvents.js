@@ -151,11 +151,15 @@ expandInheritance(eventLists);
 function renderEventListToHtml(eventList) {
     var result = "<table>";
 
-    eventList.actions.forEach(function (action) {
-        result += "<tr>";
-        result += "<td>" + action.name + "</td>";
-        result += "</tr>";
-    });
+    var iteration = 0;
+    eventList.actions.forEach(action => {
+        iteration ++;
+        result += `<tr><td>
+                        <input type="checkbox" id="${iteration}" name="${iteration}" value="${iteration}">
+                        <label for="${iteration}" data-content="${action.name}">${action.name}</label>
+                    </td>
+                </tr>`;
+        });
 
     result += "</table>";
     return result;
