@@ -8,7 +8,7 @@ if (typeof http_data === "undefined") {
 } else {
     //  We're in tasker, use the real data.
     isDevelopmentEnvironment = false;
-    data = = JSON.parse(http_data);
+    data = JSON.parse(http_data);
 }
 
 function turnCommaSeparatedIntoArray(inputString) {
