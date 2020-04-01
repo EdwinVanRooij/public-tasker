@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f10f2a88-2191-4ad6-bf66-d9eaa82a272a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/events/1_updateAllEvents.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/2_showEvent.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gesundheit/1_updateAllMeals.js" beforeDir="false" afterPath="$PROJECT_DIR$/gesundheit/1_updateAllMeals.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prepping/1_updateAllPrepLists.js" beforeDir="false" afterPath="$PROJECT_DIR$/prepping/1_updateAllPrepLists.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,20 +28,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/events" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Projects\tasker-javascript\prepping" />
-      <recent name="D:\Projects\tasker-javascript\everything\src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\public-tasker\events" />
       <recent name="D:\Projects\tasker-javascript\prepping" />
       <recent name="D:\Projects\tasker-javascript\retine" />
       <recent name="D:\Projects\tasker-javascript\gesundheit" />
       <recent name="D:\Projects\tasker-javascript" />
-      <recent name="C:\Users\Edwin\IdeaProjects\sample" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\tasker-javascript\prepping" />
+      <recent name="D:\Projects\tasker-javascript\everything\src" />
     </key>
   </component>
   <component name="SvnConfiguration">

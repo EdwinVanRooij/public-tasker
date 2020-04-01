@@ -1,12 +1,56 @@
+// Save whether or not we're in a development environment, or in Tasker.
 var isDevelopmentEnvironment = null;
 
+// Make sure data is initalized into `data`.
 var data = undefined;
 if (typeof http_data === "undefined") {
     // We're developing locally, initialize sample data.
     isDevelopmentEnvironment = true;
-    data = { "range": "'Prep Lists'!A17:D126", "majorDimension": "ROWS", "values": [ [ "Werk", "nvt", "nvt" ], [ "", "Wortels, tomaten, appel", "Nee" ], [ "", "Wortels, tomaten, appel", "Nee" ], [ "", "Brood, pindakaas, halvarine, banaan, ei(?)", "Nee" ], [ "", "Banaan, kiwi, avocado, amandelen, walnoten", "Nee" ], [], [], [ "Fitness", "nvt", "nvt" ], [ "", "Handdoek (x2)", "Nee" ], [ "", "Sokken", "Nee" ], [ "", "Onderbroek", "Nee" ], [ "", "Fitness shirt", "Ja" ], [ "", "Fitness broek", "Ja" ], [ "", "Shampoo", "Ja" ], [ "", "Zeep", "Ja" ], [ "", "Deo", "Ja" ], [ "", "Parfum", "Ja" ], [ "", "Gezichtscreme", "Ja" ], [ "", "Oortjes", "Ja" ], [ "", "Fitness pas", "Ja" ], [ "", "Een euromunt", "Ja" ], [], [], [ "Haarproducten", "nvt", "nvt" ], [ "", "Wax", "Ja" ], [ "", "Fohn", "Ja" ], [ "", "Haarlak", "Ja" ], [ "", "Haar wave spray", "Ja" ], [], [], [], [], [ "Op stap", "nvt", "nvt", "Haarproducten, Douchen" ], [ "", "Oordopjes", "Ja" ], [ "", "Listerine", "Ja" ], [ "", "Tandenborstel", "Ja" ], [ "", "Tandpasta", "Ja" ], [ "", "Kauwgom", "Ja" ], [ "", "Ketting + poets spul", "Ja" ], [ "", "Mobiel + oplader", "Ja" ], [ "", "Scheergel", "Ja" ], [ "", "Scheermesje", "Ja" ], [ "", "Scheerapparaat", "Ja" ], [ "", "Parfum", "Ja" ], [ "", "Deo", "Ja" ], [ "", "ID, geld/pinpas", "Ja" ], [ "", "Fancy shirt", "Nee" ], [ "", "Broek", "Nee" ], [ "", "Sokken", "Nee" ], [ "", "Stapschoenen", "Ja" ], [ "", "Lenzendoosje + vloeistof"], [], [], [ "Douchen", "nvt", "nvt" ], [ "", "Zeep", "Ja" ], [ "", "Gezichtscreme", "Ja" ], [ "", "Shampoo", "Ja" ], [ "", "Scrubgel", "Ja" ], [], [], [], [ "Festival", "nvt", "nvt", "Op stap" ], [ "", "Powerbank", "Ja" ], [ "", "Nuts", "Nee" ], [ "", "Kwark", "Nee" ], [ "", "Bananen", "Nee" ], [ "", "Oplader mobiel", "Ja" ], [ "", "Zonnebrillen / gekke ook", "Ja" ], [ "", "Eten", "Nee" ], [ "", "Drinken", "Nee" ], [ "", "Tandenborstel", "Ja" ], [ "", "Tandpasta", "Ja" ], [ "", "Snoep", "Nee" ], [ "", "Waaier(s)", "Ja" ], [ "", "Pet", "Ja" ], [ "", "Waterzak(ken)", "Ja" ], [ "", "Paraplu", "Ja" ], [ "", "OV chipkaart", "Ja" ], [], [], [], [ "Zwemmen", "nvt", "nvt" ], [ "", "Tas om zooi in te doen", "Ja" ], [ "", "Speaker (bluetooth)", "Ja" ], [ "", "Strand handdoek", "Ja" ], [ "", "Powerbank", "Ja" ], [ "", "USB kabel van powerbank naar speaker", "Ja" ], [ "", "Zonnebril", "Ja" ], [ "", "Beurs (met pinpas/geld)", "Ja" ], [ "", "Zonnebrand", "Ja" ] ] }
+    data = {
+      "range": "'Prep Lists & Event Lists'!G17:J242",
+      "majorDimension": "ROWS",
+      "values": [
+        [
+          "Douchen",
+          "nvt",
+          "nvt"
+        ],
+        [
+          "",
+          "T: Zeep gebruiken"
+        ],
+        [
+          "",
+          "T: Shampoo gebruiken"
+        ],
+        [
+          "",
+          "N: Gezicht scrubben",
+          "Max 2x per week, het liefst maandag & donderdag"
+        ],
+        [
+          "",
+          "N: Gezichtscreme gebruiken",
+          "Elke keer"
+        ],
+        [],
+        [
+          "Naar fitness gaan",
+          "nvt",
+          "nvt"
+        ],
+        [
+          "",
+          "V: Oortjes meenemen"
+        ],
+        [ "", "V: Euro meenemen" ], [ "", "V: Fitness pas meenemen" ], [], [ "Op stap gaan", "nvt", "nvt", "Douchen" ], [ "", "V: Oordopjes meenemen" ], [ "", "V: Tanden poetsen" ], [ "", "V: Listerine gebruiken" ], [ "", "V: Ketting poetsen & omdoen" ], [ "", "V: Mobiel opladen"
+        ], [ "", "V: P/E: Douchen" ], [ "", "V: Scheerapparaat opladen" ], [ "", "V: Oksels, beneden, gezicht (scheren/trimmen)" ], [ "", "V: Haren doen" ], [ "", "V: Deo & parfum opdoen" ], [ "", "V: ID, geld/pinpas meenemen" ], [ "", "V: Stapschoenen aandoen" ], [ "", "V: Lenzendoosje + vloeistof meenemen" ], [], [], [ "Naar festival gaan", "nvt", "nvt", "Op stap gaan" ], [ "", "V: Powerbank opladen" ], [ "", "V: Nuts eten" ], [ "", "V: Bananen eten" ], [ "", "V: Powerbank meenemen" ], [
+          "", "V: Mobiel opladen" ], [ "", "V: Haren doen" ], [ "", "V: Zonnebrillen meenemen" ], [ "", "V/T: Eten" ], [ "", "V/T: Drinken" ], [ "", "V: Tanden poetsen" ], [ "", "V: Snoep meenemen" ], [ "", "V: Waaier(s) meenemen" ], [ "", "V: Pet meenemen" ], [ "", "V: Waterzak(ken) meenemen" ],
+        [ "", "V: Paraplu meenemen" ], [ "", "V: OV chipkaart meenemen" ]
+      ]
+    };
 } else {
-    //  We're in tasker, use the real data.
+    //  We're in Tasker, use the real data.
     isDevelopmentEnvironment = false;
     data = JSON.parse(http_data);
 }

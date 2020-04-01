@@ -20,12 +20,6 @@ var data = JSON.parse(http_data);
 //  ]
 //}
 
-if (typeof data.values === "undefined") {
-console.log("Error, values is not filled in.");
-}else {
-
-}
-
 function generateFoodTableRowFromRow(row) {
 // 0 = time
 // 1 = hoeveelheid / portie(s)
