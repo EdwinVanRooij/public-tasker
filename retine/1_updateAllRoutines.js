@@ -184,5 +184,6 @@ for (var i = 0; i < routines.length; i++) {
         setGlobal(currentRoutineTimeKey, currentRoutineTimeValue);
         setGlobal(currentRoutineObjectKey, currentRoutineObjectValue);
         setGlobal(currentRoutineRenderedKey, currentRoutineRenderedValue);
+        flash('Updated ' + currentRoutineNameKey);
     }
 }
