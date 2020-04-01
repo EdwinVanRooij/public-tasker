@@ -1,5 +1,15 @@
-var data = JSON.parse(http_data);
-//var data = { "range": "'Prep Lists'!A17:D126", "majorDimension": "ROWS", "values": [ [ "Werk", "nvt", "nvt" ], [ "", "Wortels, tomaten, appel", "Nee" ], [ "", "Wortels, tomaten, appel", "Nee" ], [ "", "Brood, pindakaas, halvarine, banaan, ei(?)", "Nee" ], [ "", "Banaan, kiwi, avocado, amandelen, walnoten", "Nee" ], [], [], [ "Fitness", "nvt", "nvt" ], [ "", "Handdoek (x2)", "Nee" ], [ "", "Sokken", "Nee" ], [ "", "Onderbroek", "Nee" ], [ "", "Fitness shirt", "Ja" ], [ "", "Fitness broek", "Ja" ], [ "", "Shampoo", "Ja" ], [ "", "Zeep", "Ja" ], [ "", "Deo", "Ja" ], [ "", "Parfum", "Ja" ], [ "", "Gezichtscreme", "Ja" ], [ "", "Oortjes", "Ja" ], [ "", "Fitness pas", "Ja" ], [ "", "Een euromunt", "Ja" ], [], [], [ "Haarproducten", "nvt", "nvt" ], [ "", "Wax", "Ja" ], [ "", "Fohn", "Ja" ], [ "", "Haarlak", "Ja" ], [ "", "Haar wave spray", "Ja" ], [], [], [], [], [ "Op stap", "nvt", "nvt", "Haarproducten, Douchen" ], [ "", "Oordopjes", "Ja" ], [ "", "Listerine", "Ja" ], [ "", "Tandenborstel", "Ja" ], [ "", "Tandpasta", "Ja" ], [ "", "Kauwgom", "Ja" ], [ "", "Ketting + poets spul", "Ja" ], [ "", "Mobiel + oplader", "Ja" ], [ "", "Scheergel", "Ja" ], [ "", "Scheermesje", "Ja" ], [ "", "Scheerapparaat", "Ja" ], [ "", "Parfum", "Ja" ], [ "", "Deo", "Ja" ], [ "", "ID, geld/pinpas", "Ja" ], [ "", "Fancy shirt", "Nee" ], [ "", "Broek", "Nee" ], [ "", "Sokken", "Nee" ], [ "", "Stapschoenen", "Ja" ], [ "", "Lenzendoosje + vloeistof"], [], [], [ "Douchen", "nvt", "nvt" ], [ "", "Zeep", "Ja" ], [ "", "Gezichtscreme", "Ja" ], [ "", "Shampoo", "Ja" ], [ "", "Scrubgel", "Ja" ], [], [], [], [ "Festival", "nvt", "nvt", "Op stap" ], [ "", "Powerbank", "Ja" ], [ "", "Nuts", "Nee" ], [ "", "Kwark", "Nee" ], [ "", "Bananen", "Nee" ], [ "", "Oplader mobiel", "Ja" ], [ "", "Zonnebrillen / gekke ook", "Ja" ], [ "", "Eten", "Nee" ], [ "", "Drinken", "Nee" ], [ "", "Tandenborstel", "Ja" ], [ "", "Tandpasta", "Ja" ], [ "", "Snoep", "Nee" ], [ "", "Waaier(s)", "Ja" ], [ "", "Pet", "Ja" ], [ "", "Waterzak(ken)", "Ja" ], [ "", "Paraplu", "Ja" ], [ "", "OV chipkaart", "Ja" ], [], [], [], [ "Zwemmen", "nvt", "nvt" ], [ "", "Tas om zooi in te doen", "Ja" ], [ "", "Speaker (bluetooth)", "Ja" ], [ "", "Strand handdoek", "Ja" ], [ "", "Powerbank", "Ja" ], [ "", "USB kabel van powerbank naar speaker", "Ja" ], [ "", "Zonnebril", "Ja" ], [ "", "Beurs (met pinpas/geld)", "Ja" ], [ "", "Zonnebrand", "Ja" ] ] }
+var isDevelopmentEnvironment = null;
+
+var data = undefined;
+if (typeof http_data === "undefined") {
+    // We're developing locally, initialize sample data.
+    isDevelopmentEnvironment = true;
+    data = { "range": "'Prep Lists'!A17:D126", "majorDimension": "ROWS", "values": [ [ "Werk", "nvt", "nvt" ], [ "", "Wortels, tomaten, appel", "Nee" ], [ "", "Wortels, tomaten, appel", "Nee" ], [ "", "Brood, pindakaas, halvarine, banaan, ei(?)", "Nee" ], [ "", "Banaan, kiwi, avocado, amandelen, walnoten", "Nee" ], [], [], [ "Fitness", "nvt", "nvt" ], [ "", "Handdoek (x2)", "Nee" ], [ "", "Sokken", "Nee" ], [ "", "Onderbroek", "Nee" ], [ "", "Fitness shirt", "Ja" ], [ "", "Fitness broek", "Ja" ], [ "", "Shampoo", "Ja" ], [ "", "Zeep", "Ja" ], [ "", "Deo", "Ja" ], [ "", "Parfum", "Ja" ], [ "", "Gezichtscreme", "Ja" ], [ "", "Oortjes", "Ja" ], [ "", "Fitness pas", "Ja" ], [ "", "Een euromunt", "Ja" ], [], [], [ "Haarproducten", "nvt", "nvt" ], [ "", "Wax", "Ja" ], [ "", "Fohn", "Ja" ], [ "", "Haarlak", "Ja" ], [ "", "Haar wave spray", "Ja" ], [], [], [], [], [ "Op stap", "nvt", "nvt", "Haarproducten, Douchen" ], [ "", "Oordopjes", "Ja" ], [ "", "Listerine", "Ja" ], [ "", "Tandenborstel", "Ja" ], [ "", "Tandpasta", "Ja" ], [ "", "Kauwgom", "Ja" ], [ "", "Ketting + poets spul", "Ja" ], [ "", "Mobiel + oplader", "Ja" ], [ "", "Scheergel", "Ja" ], [ "", "Scheermesje", "Ja" ], [ "", "Scheerapparaat", "Ja" ], [ "", "Parfum", "Ja" ], [ "", "Deo", "Ja" ], [ "", "ID, geld/pinpas", "Ja" ], [ "", "Fancy shirt", "Nee" ], [ "", "Broek", "Nee" ], [ "", "Sokken", "Nee" ], [ "", "Stapschoenen", "Ja" ], [ "", "Lenzendoosje + vloeistof"], [], [], [ "Douchen", "nvt", "nvt" ], [ "", "Zeep", "Ja" ], [ "", "Gezichtscreme", "Ja" ], [ "", "Shampoo", "Ja" ], [ "", "Scrubgel", "Ja" ], [], [], [], [ "Festival", "nvt", "nvt", "Op stap" ], [ "", "Powerbank", "Ja" ], [ "", "Nuts", "Nee" ], [ "", "Kwark", "Nee" ], [ "", "Bananen", "Nee" ], [ "", "Oplader mobiel", "Ja" ], [ "", "Zonnebrillen / gekke ook", "Ja" ], [ "", "Eten", "Nee" ], [ "", "Drinken", "Nee" ], [ "", "Tandenborstel", "Ja" ], [ "", "Tandpasta", "Ja" ], [ "", "Snoep", "Nee" ], [ "", "Waaier(s)", "Ja" ], [ "", "Pet", "Ja" ], [ "", "Waterzak(ken)", "Ja" ], [ "", "Paraplu", "Ja" ], [ "", "OV chipkaart", "Ja" ], [], [], [], [ "Zwemmen", "nvt", "nvt" ], [ "", "Tas om zooi in te doen", "Ja" ], [ "", "Speaker (bluetooth)", "Ja" ], [ "", "Strand handdoek", "Ja" ], [ "", "Powerbank", "Ja" ], [ "", "USB kabel van powerbank naar speaker", "Ja" ], [ "", "Zonnebril", "Ja" ], [ "", "Beurs (met pinpas/geld)", "Ja" ], [ "", "Zonnebrand", "Ja" ] ] }
+} else {
+    //  We're in tasker, use the real data.
+    isDevelopmentEnvironment = false;
+    data = = JSON.parse(http_data);
+}
 
 function turnCommaSeparatedIntoArray(inputString) {
     if (inputString) {
@@ -146,4 +156,11 @@ expandInheritance(allPrepLists);
 removeDuplicateUniqueItems(allPrepLists);
 
 //console.log(allPrepLists);
-setGlobal("ALL_PREP_LISTS", JSON.stringify(allPrepLists));
+var globalKey = "ALL_PREP_LISTS";
+if (isDevelopmentEnvironment) {
+    console.log("Setting global variable " + globalKey);
+    console.log(allPrepLists);
+} else {
+    // We're in Tasker, set the global variable.
+    setGlobal(globalKey, JSON.stringify(allPrepLists));
+}
