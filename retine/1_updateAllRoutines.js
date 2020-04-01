@@ -7,11 +7,17 @@ var data = undefined;
 if (typeof http_data === "undefined") {
     // We're developing locally, initialize sample data.
     isDevelopmentEnvironment = true;
-    data = {
-      "range": "'Timed Checklists'!A10:F28",
-        "majorDimension": "ROWS",
+    var data = {
+          "range": "Retine!A24:G101",
+          "majorDimension": "ROWS",
           "values": [
-              [ "09:00", "Ochtend routine", "nvt", "00:16:10", "Ja" ], [ "", "", "Lenzen indoen", "00:00:30" ], [ "", "", "Tanden poetsen", "00:02:00" ], [ "", "", "Aankleden", "00:01:00" ], [ "", "", "Eten (zie Project Gesundheit)", "00:10:00" ], [ "", "", "P: Overdag meal prep", "00:02:00" ], [ "", "", "Deo opdoen", "00:00:10" ], [ "", "", "Parfum opdoen", "00:00:10" ], [], [ "07:00", "Extra routine", "nvt", "00:00:10", "Ja" ], [ "", "", "Extra ding", "00:00:10" ], [], [], [ "08:45", "Ochtend fitness routine", "nvt", "00:02:00", "Ja", "Ochtend routine, Extra routine" ], [ "", "", "P: Fitness prep", "00:02:00" ] ] };
+            [
+              "07:42", "Ochtend", "nvt", "00:17:15", "Ja", "", "Zorgen dat ik om 8:30 weg ben, tijd = 8:30 - duratie van routine." ], [ "", "", "Tanden poetsen" ], [ "", "", "Lenzen indoen ", "00:02:00" ], [ "", "", "Deo opdoen" ], [ "", "", "Parfum opdoen" ], [ "", "", "Aankleden", "00:01:00"
+            ], [ "", "", "Eten (zie Project Gesundheit)", "00:10:00" ], [ "", "", "Pet opdoen", "00:02:00" ], [ "", "", "Mobiel, beurs, sleutels" ], [ "", "", "Prepping: Ochtend & middag" ], [], [], [ "07:41", "Ochtend voor fitness", "nvt", "00:18:24", "Ja", "Ochtend"
+            ], [ "", "", "P: Fitness items meenemen", "00:01:00" ], [], [], [ "22:11", "Avond", "nvt", "00:03:27", "Ja", "", "Zorgen dat ik om 23:30 ga slapen, tijd = 23:30 - duratie van routine." ], [ "", "", "Kamer opruimen", "00:02:00" ], [ "", "", "Thermostaat lager zetten" ], [ "",
+              "", "WC" ], [ "", "", "Lenzen uit doen" ], [ "", "", "Tanden poetsen" ], [ "", "", "Wekker(s) zetten", "00:01:00" ], [ "", "", "Gezichtscreme opdoen" ], [], [
+              "22:08", "Avond voor fitness", "nvt", "00:06:16", "Ja", "Avond" ], [ "", "", "P: Fitness items klaarzetten", "00:02:00" ] ]
+        };
 } else {
     //  We're in tasker, use the real data.
     isDevelopmentEnvironment = false;
@@ -35,7 +41,7 @@ class Routine {
 class Action {
     constructor(name) {
         this.name = name;
-        this.name = duration;
+        this.duration = undefined;
     }
 }
 
@@ -57,6 +63,7 @@ data.values.forEach(function(row) {
         var name = row[1];
         var duration = row[3];
         var isActive = row[4];
+        var inheritsFrom = row[5];
         currentRoutine = new Routine(time, name, duration, isActive, inheritsFrom);
         if (row[5]) {
             // We have inheritance, set it on the current event list.
@@ -165,14 +172,16 @@ for (var i = 0; i < routines.length; i++) {
 
     // 4:
     var currentRoutineRenderedKey = `EVENT_${currentRoutineNameAsKey}_RENDERED`;
-    var currentRoutineRenderedValue = renderEventListToHtml(currentRoutine);
+    var currentRoutineRenderedValue = renderRoutineToHtml(currentRoutine);
 
     if (isDevelopmentEnvironment) {
         console.log(`${currentRoutineNameKey}: ${currentRoutineNameValue}`);
+        console.log(`${currentRoutineTimeKey}: ${currentRoutineTimeValue}`);
         console.log(`${currentRoutineObjectKey}: ${currentRoutineObjectValue}`);
         console.log(`${currentRoutineRenderedKey}: ${currentRoutineRenderedValue}`);
     } else {
         setGlobal(currentRoutineNameKey, currentRoutineNameValue);
+        setGlobal(currentRoutineTimeKey, currentRoutineTimeValue);
         setGlobal(currentRoutineObjectKey, currentRoutineObjectValue);
         setGlobal(currentRoutineRenderedKey, currentRoutineRenderedValue);
     }
