@@ -164,7 +164,7 @@ for (var i = 0; i < routines.length; i++) {
 
     // 2:
     var currentRoutineTimeKey = `ROUTINE_${currentRoutineNameAsKey}_TIME`;
-    var currentRoutineTimeValue = `${currentRoutine.duration}`;
+    var currentRoutineTimeValue = `${currentRoutine.time}`;
 
     // 3:
     var currentRoutineObjectKey = `ROUTINE_${currentRoutineNameAsKey}_OBJECT`;
@@ -184,6 +184,5 @@ for (var i = 0; i < routines.length; i++) {
         setGlobal(currentRoutineTimeKey, currentRoutineTimeValue);
         setGlobal(currentRoutineObjectKey, currentRoutineObjectValue);
         setGlobal(currentRoutineRenderedKey, currentRoutineRenderedValue);
-        flash('Updated ' + currentRoutineNameKey);
     }
 }
