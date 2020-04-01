@@ -149,7 +149,16 @@ expandInheritance(eventLists);
 // Step 5: Generate all variables for each EventList.
 // ===========================================================================================
 function renderEventListToHtml(eventList) {
-    return "<someHtml/>";
+    var result = "<table>";
+
+    eventList.actions.forEach(function (action) {
+        result += "<tr>";
+        result += "<td>" + action.name + "</td>";
+        result += "</tr>";
+    });
+
+    result += "</table>";
+    return result;
 }
 
 for (var i = 0; i < eventLists.length; i++) {
