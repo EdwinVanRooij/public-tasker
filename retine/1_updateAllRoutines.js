@@ -66,7 +66,7 @@ data.values.forEach(function(row) {
         var inheritsFrom = row[5];
         currentRoutine = new Routine(time, name, duration, isActive, inheritsFrom);
         if (row[5]) {
-            // We have inheritance, set it on the current event list.
+            // We have inheritance, set it on the current routine.
             currentRoutine.inheritsFrom = row[5];
         }
     } else if (row[2]) {
@@ -85,7 +85,7 @@ data.values.forEach(function(row) {
 routines.push(currentRoutine);
 
 // ===========================================================================================
-// Step 4: Expand inheritance (add all actions from the other EventList to the current).
+// Step 4: Expand inheritance (add all actions from the other Routine to the current).
 // ===========================================================================================
 
 // Turns a string like "One, Two, Three" into ["One", "Two", "Three"].
@@ -115,7 +115,7 @@ function getActionsFromRoutinesByName(routines, inheritName){
 function expandInheritance(routines) {
     routines.forEach(function(routine) {
         if (routine.inheritsFrom) {
-            // The current event list has inheritance. Parse all inherits into a list.
+            // The current routine has inheritance. Parse all inherits into a list.
             var inherits = turnCommaSeparatedIntoArray(routine.inheritsFrom);
             inherits.forEach(function (inheritName){
                 var newActions = getActionsFromRoutinesByName(routines, inheritName);
@@ -125,7 +125,7 @@ function expandInheritance(routines) {
     });
 }
 
-// Expand inheritance on all event lists.
+// Expand inheritance on all routines lists.
 expandInheritance(routines);
 
 // ===========================================================================================
@@ -150,7 +150,7 @@ function renderRoutineToHtml(routine) {
 }
 
 for (var i = 0; i < routines.length; i++) {
-    // Result variables for each event will be:
+    // Result variables for each routine will be:
     // 1: ROUTINE_OCHTEND_NAME = "Ochtend"
     // 2: ROUTINE_OCHTEND_TIME = "07:42"
     // 3: ROUTINE_OCHTEND_OBJECT = JSON string representation of Routine
@@ -159,19 +159,19 @@ for (var i = 0; i < routines.length; i++) {
     var currentRoutineNameAsKey = currentRoutine.name.replace(/\s+/g, '_').toUpperCase();
 
     // 1:
-    var currentRoutineNameKey = `EVENT_${currentRoutineNameAsKey}_NAME`;
+    var currentRoutineNameKey = `ROUTINE_${currentRoutineNameAsKey}_NAME`;
     var currentRoutineNameValue = `${currentRoutine.name}`;
 
     // 2:
-    var currentRoutineTimeKey = `EVENT_${currentRoutineNameAsKey}_TIME`;
+    var currentRoutineTimeKey = `ROUTINE_${currentRoutineNameAsKey}_TIME`;
     var currentRoutineTimeValue = `${currentRoutine.duration}`;
 
     // 3:
-    var currentRoutineObjectKey = `EVENT_${currentRoutineNameAsKey}_OBJECT`;
+    var currentRoutineObjectKey = `ROUTINE_${currentRoutineNameAsKey}_OBJECT`;
     var currentRoutineObjectValue = JSON.stringify(currentRoutine);
 
     // 4:
-    var currentRoutineRenderedKey = `EVENT_${currentRoutineNameAsKey}_RENDERED`;
+    var currentRoutineRenderedKey = `ROUTINE_${currentRoutineNameAsKey}_RENDERED`;
     var currentRoutineRenderedValue = renderRoutineToHtml(currentRoutine);
 
     if (isDevelopmentEnvironment) {
