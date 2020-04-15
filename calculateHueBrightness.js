@@ -20,8 +20,8 @@ if (typeof setGlobal === "undefined") {
     hueStartTimeMorning = "8.00";
     hueEndTimeMorning = "10.00";
     hueStartTimeEvening = "22.00";
-    hueEndTimeEvening = "23.00";
-    time = "22.10";
+    hueEndTimeEvening = "23.59";
+    time = "23.55";
 } else {
     //  We're in tasker, use the real data.
     isDevelopmentEnvironment = false;

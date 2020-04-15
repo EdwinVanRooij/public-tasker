@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f10f2a88-2191-4ad6-bf66-d9eaa82a272a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/achievements/1_updateAllAchievements.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/achievements/2_showAchievements.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/achievements/calculateHueBrightness.js" beforeDir="false" afterPath="$PROJECT_DIR$/achievements/calculateHueBrightness.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/achievements/calculateHueBrightness.js" beforeDir="false" afterPath="$PROJECT_DIR$/calculateHueBrightness.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,20 +27,21 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/events" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/achievements" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\public-tasker" />
+      <recent name="D:\Projects\tasker-javascript\prepping" />
+      <recent name="D:\Projects\tasker-javascript\everything\src" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\public-tasker\achievements" />
       <recent name="D:\Projects\public-tasker\events" />
       <recent name="D:\Projects\tasker-javascript\prepping" />
       <recent name="D:\Projects\tasker-javascript\retine" />
       <recent name="D:\Projects\tasker-javascript\gesundheit" />
-      <recent name="D:\Projects\tasker-javascript" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Projects\tasker-javascript\prepping" />
-      <recent name="D:\Projects\tasker-javascript\everything\src" />
     </key>
   </component>
   <component name="SvnConfiguration">
