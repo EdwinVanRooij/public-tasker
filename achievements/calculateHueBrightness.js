@@ -21,7 +21,7 @@ if (typeof setGlobal === "undefined") {
     hueEndTimeMorning = "10.00";
     hueStartTimeEvening = "22.00";
     hueEndTimeEvening = "23.00";
-    time = "9.30";
+    time = "22.10";
 } else {
     //  We're in tasker, use the real data.
     isDevelopmentEnvironment = false;
@@ -48,8 +48,8 @@ function getTimeInMinutes(stringTime) {
 
 // Currently only supports single-day time values (so not overlapping times over 2 days)
 function getHueBrightnessValue(minValue, maxValue, startTimeMorning, endTimeMorning, startTimeEvening, endTimeEvening, currentTime) {
-
     var currentTimeInMinutes = getTimeInMinutes(currentTime);
+
     // Determine `isEvening`. We'll say evening is between 18:00 and 3:00, otherwise not.
     var sixInTheEvening = getTimeInMinutes("18.00");
     var threeInTheMorning = getTimeInMinutes("3.00") + getTimeInMinutes("24.00");
@@ -57,35 +57,37 @@ function getHueBrightnessValue(minValue, maxValue, startTimeMorning, endTimeMorn
     if (currentTimeInMinutes >= sixInTheEvening && currentTimeInMinutes < threeInTheMorning) { isEvening = true; }
 
     if (isEvening === true) {
-        log("It's evening");
         var startTimeInMinutes = getTimeInMinutes(startTimeEvening);
         var endTimeInMinutes = getTimeInMinutes(endTimeEvening);
+        if (endTimeInMinutes < getTimeInMinutes("3.00")) { endTimeInMinutes += getTimeInMinutes("24.00"); } // Add a day if it's a time from the next day
         var startAndEndDeltaInMinutes = endTimeInMinutes - startTimeInMinutes;
         var startAndCurrentDeltaInMinutes = currentTimeInMinutes - startTimeInMinutes;
         var brightnessValuePerMinute = (maxValue - minValue) / startAndEndDeltaInMinutes;
 
         // It's evening, so we should get a gradually lower brightness, from a maximum down to a minimum.
         var brightnessToSubtract = brightnessValuePerMinute * startAndCurrentDeltaInMinutes;
-        log("Brightness to subtract: " + brightnessToSubtract);
-        return Math.floor(maxValue - brightnessToSubtract);
+        var result = Math.floor(maxValue - brightnessToSubtract);
+
+        if (result < minValue) { return minValue; } else if (result > maxValue) { return maxValue; } else { return result; }
     } else {
-        log("It's morning");
         var startTimeInMinutes = getTimeInMinutes(startTimeMorning);
         var endTimeInMinutes = getTimeInMinutes(endTimeMorning);
         var startAndEndDeltaInMinutes = endTimeInMinutes - startTimeInMinutes;
         var startAndCurrentDeltaInMinutes = currentTimeInMinutes - startTimeInMinutes;
         var brightnessValuePerMinute = (maxValue - minValue) / startAndEndDeltaInMinutes;
+
         // It's morning, so we should get a gradually higher brightness, from a minimum up to a maximum.
         var brightnessToAdd = brightnessValuePerMinute * startAndCurrentDeltaInMinutes;
-        log("Brightness to add: " + brightnessToAdd);
-        return Math.floor(minValue + brightnessToAdd);
+        var result = Math.floor(minValue + brightnessToAdd);
+
+        if (result < minValue) { return minValue; } else if (result > maxValue) { return maxValue; } else { return result; }
     }
 }
 
 var brightnessValue = getHueBrightnessValue(hueMinValue, hueMaxValue, hueStartTimeMorning, hueEndTimeMorning, hueStartTimeEvening, hueEndTimeEvening, time);
 
 if (isDevelopmentEnvironment) {
-    console.log('Brightness value will be ' + brightnessValue);
+    log('Brightness value will be ' + brightnessValue);
 } else {
     setGlobal("%BRIGHTNESS_HUE", brightnessValue);
 }
