@@ -34,6 +34,8 @@ if (typeof setGlobal === "undefined") {
     time = global("%TIME");
 }
 
+log(`Dev: ${isDevelopmentEnvironment}, min: ${hueMinValue}, max: ${hueMaxValue}, startMorning: ${hueStartTimeMorning}, endMorning: ${endTimeMorning}, startEvening: ${hueStartTimeEvening}, endEvening: ${hueEndTimeEvening}, time: ${time}`);
+
 function log(string) {
     if (isDevelopmentEnvironment) {
         console.log(string)
@@ -86,7 +88,7 @@ function getHueBrightnessValue(minValue, maxValue, startTimeMorning, endTimeMorn
 
 var brightnessValue = getHueBrightnessValue(hueMinValue, hueMaxValue, hueStartTimeMorning, hueEndTimeMorning, hueStartTimeEvening, hueEndTimeEvening, time);
 
-log("Time: " + time + ", brightness: " + brightnessValue);
+//log("Time: " + time + ", brightness: " + brightnessValue);
 
 if (!isDevelopmentEnvironment) {
     setGlobal("%BRIGHTNESS_HUE", brightnessValue);
