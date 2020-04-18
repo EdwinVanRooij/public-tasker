@@ -17,11 +17,11 @@ if (typeof setGlobal === "undefined") {
     isDevelopmentEnvironment = true;
     hueMinValue = 30;
     hueMaxValue = 254;
-    hueStartTimeMorning = "8.00";
-    hueEndTimeMorning = "10.00";
-    hueStartTimeEvening = "22.00";
+    hueStartTimeMorning = "9.00";
+    hueEndTimeMorning = "10.30";
+    hueStartTimeEvening = "21.30";
     hueEndTimeEvening = "23.59";
-    time = "0.01";
+    time = "10.07";
 } else {
     //  We're in tasker, use the real data.
     isDevelopmentEnvironment = false;
@@ -86,9 +86,8 @@ function getHueBrightnessValue(minValue, maxValue, startTimeMorning, endTimeMorn
 
 var brightnessValue = getHueBrightnessValue(hueMinValue, hueMaxValue, hueStartTimeMorning, hueEndTimeMorning, hueStartTimeEvening, hueEndTimeEvening, time);
 
-if (isDevelopmentEnvironment) {
-    log('Brightness value will be ' + brightnessValue);
-} else {
-    flash("Time: " + time + ", brightness: " + brightnessValue);
+log("Time: " + time + ", brightness: " + brightnessValue);
+
+if (!isDevelopmentEnvironment) {
     setGlobal("%BRIGHTNESS_HUE", brightnessValue);
 }
