@@ -34,7 +34,7 @@ if (typeof setGlobal === "undefined") {
     time = global("%TIME");
 }
 
-log(`Dev: ${isDevelopmentEnvironment}, min: ${hueMinValue}, max: ${hueMaxValue}, startMorning: ${hueStartTimeMorning}, endMorning: ${endTimeMorning}, startEvening: ${hueStartTimeEvening}, endEvening: ${hueEndTimeEvening}, time: ${time}`);
+log(`Dev: ${isDevelopmentEnvironment}, min: ${hueMinValue}, max: ${hueMaxValue}, startMorning: ${hueStartTimeMorning}, endMorning: ${hueEndTimeMorning}, startEvening: ${hueStartTimeEvening}, endEvening: ${hueEndTimeEvening}, time: ${time}`);
 
 function log(string) {
     if (isDevelopmentEnvironment) {
