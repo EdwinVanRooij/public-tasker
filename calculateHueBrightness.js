@@ -42,8 +42,6 @@ function log(string) {
     }
 }
 
-log('Dev: ' + isDevelopmentEnvironment + ', min: ' + hueMinValue + ', max: ' + hueMaxValue + 'startMorning: ' + hueStartTimeMorning + ', endMorning: ' + hueEndTimeMorning + ', startEvening: ' + hueStartTimeEvening + ', endEvening: ' + hueEndTimeEvening + ', time: ' + time);
-
 function getTimeInMinutes(stringTime) {
     return parseInt(stringTime.split('.', 2)[0]) * 60 + parseInt(stringTime.split('.', 2)[1]);
 }
@@ -88,7 +86,7 @@ function getHueBrightnessValue(minValue, maxValue, startTimeMorning, endTimeMorn
 
 var brightnessValue = getHueBrightnessValue(hueMinValue, hueMaxValue, hueStartTimeMorning, hueEndTimeMorning, hueStartTimeEvening, hueEndTimeEvening, time);
 
-//log("Time: " + time + ", brightness: " + brightnessValue);
+log('Dev: ' + isDevelopmentEnvironment + ', min: ' + hueMinValue + ', max: ' + hueMaxValue + ', startMorning: ' + hueStartTimeMorning + ', endMorning: ' + hueEndTimeMorning + ', startEvening: ' + hueStartTimeEvening + ', endEvening: ' + hueEndTimeEvening + ', time: ' + time + ', brightness: ' + brightnessValue);
 
 if (!isDevelopmentEnvironment) {
     setGlobal("%BRIGHTNESS_HUE", brightnessValue);
