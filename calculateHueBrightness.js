@@ -86,7 +86,7 @@ function getHueBrightnessValue(minValue, maxValue, startTimeMorning, endTimeMorn
 
 var brightnessValue = getHueBrightnessValue(hueMinValue, hueMaxValue, hueStartTimeMorning, hueEndTimeMorning, hueStartTimeEvening, hueEndTimeEvening, time);
 
-//log('Dev: ' + isDevelopmentEnvironment + ', min: ' + hueMinValue + ', max: ' + hueMaxValue + ', startMorning: ' + hueStartTimeMorning + ', endMorning: ' + hueEndTimeMorning + ', startEvening: ' + hueStartTimeEvening + ', endEvening: ' + hueEndTimeEvening + ', time: ' + time + ', brightness: ' + brightnessValue);
+log('Dev: ' + isDevelopmentEnvironment + ', min: ' + hueMinValue + ', max: ' + hueMaxValue + ', startMorning: ' + hueStartTimeMorning + ', endMorning: ' + hueEndTimeMorning + ', startEvening: ' + hueStartTimeEvening + ', endEvening: ' + hueEndTimeEvening + ', time: ' + time + ', brightness: ' + brightnessValue);
 //log('Dev: ' + typeof(isDevelopmentEnvironment) + ', min: ' + typeof(hueMinValue) + ', max: ' + typeof(hueMaxValue) + ', startMorning: ' + typeof(hueStartTimeMorning) + ', endMorning: ' + typeof(hueEndTimeMorning) + ', startEvening: ' + typeof(hueStartTimeEvening) + ', endEvening: ' + typeof(hueEndTimeEvening) + ', time: ' + typeof(time) + ', brightness: ' + typeof(brightnessValue));
 
 if (!isDevelopmentEnvironment) {
