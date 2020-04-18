@@ -25,8 +25,8 @@ if (typeof setGlobal === "undefined") {
 } else {
     //  We're in tasker, use the real data.
     isDevelopmentEnvironment = false;
-    hueMinValue = global("%HUE_MIN_VALUE");
-    hueMaxValue = global("%HUE_MAX_VALUE");
+    hueMinValue = parseInt(global("%HUE_MIN_VALUE"));
+    hueMaxValue = parseInt(global("%HUE_MAX_VALUE"));
     hueStartTimeMorning = global("%HUE_START_TIME_MORNING");
     hueEndTimeMorning = global("%HUE_END_TIME_MORNING");
     hueStartTimeEvening = global("%HUE_START_TIME_EVENING");
