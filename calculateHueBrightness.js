@@ -42,9 +42,7 @@ function log(string) {
     }
 }
 
-//log('Dev: ' + isDevelopmentEnvironment + ', min: ' + hueMinValue + ', max: ' + hueMaxValue);
-log('startMorning: ' + hueStartTimeMorning + ', endMorning: ' + hueEndTimeMorning + ', startEvening: ' + hueStartTimeEvening + ', endEvening: ' + hueEndTimeEvening);
-//log('time: ' + time);
+log('Dev: ' + isDevelopmentEnvironment + ', min: ' + hueMinValue + ', max: ' + hueMaxValue + 'startMorning: ' + hueStartTimeMorning + ', endMorning: ' + hueEndTimeMorning + ', startEvening: ' + hueStartTimeEvening + ', endEvening: ' + hueEndTimeEvening + ', time: ' + time);
 
 function getTimeInMinutes(stringTime) {
     return parseInt(stringTime.split('.', 2)[0]) * 60 + parseInt(stringTime.split('.', 2)[1]);
