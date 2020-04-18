@@ -42,8 +42,8 @@ function log(string) {
     }
 }
 
-log('Dev: ' + isDevelopmentEnvironment + ', min: ' + hueMinValue + ', max: ' + hueMaxValue);
-//log('startMorning: ' + hueStartTimeMorning + ', endMorning: ' + hueEndTimeMorning + ', startEvening: ' + hueStartTimeEvening + ', endEvening: ' + hueEndTimeEvening);
+//log('Dev: ' + isDevelopmentEnvironment + ', min: ' + hueMinValue + ', max: ' + hueMaxValue);
+log('startMorning: ' + hueStartTimeMorning + ', endMorning: ' + hueEndTimeMorning + ', startEvening: ' + hueStartTimeEvening + ', endEvening: ' + hueEndTimeEvening);
 //log('time: ' + time);
 
 function getTimeInMinutes(stringTime) {
