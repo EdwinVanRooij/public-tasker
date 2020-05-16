@@ -24,9 +24,10 @@ if (typeof http_data === "undefined") {
 // Step 2: Define models.
 // ===========================================================================================
 class Achievement {
-    constructor(description, days) {
+    constructor(description, days, keyWords) {
         this.description = description;
         this.days = days;
+        this.keyWords = keyWords;
     }
 }
 
@@ -38,7 +39,8 @@ var achievements = [];
 data.values.forEach(function(row) {
     var description = row[0];
     var days = row[2];
-    var achievement = new Achievement(description, days);
+    var keyWords = row[4];
+    var achievement = new Achievement(description, days, keyWords);
     achievements.push(achievement);
 });
 
@@ -52,7 +54,7 @@ function renderAchievementsToHtml(eventList) {
     achievements.forEach(achievement => {
         var achievementRow = "<tr>";
         achievementRow += "<td align=\"right\">" + achievement.days + " days </td>";
-        achievementRow += "<td align=\"left\">" + achievement.description + "</td>";
+        achievementRow += "<td align=\"left\">" + achievement.description + " (<i>"+achievement.keyWords+"</i>)</td>";
         achievementRow += "</tr>";
         result += achievementRow;
     });
