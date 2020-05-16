@@ -39,7 +39,7 @@ var achievements = [];
 data.values.forEach(function(row) {
     var description = row[0];
     var days = row[2];
-    var keyWords = row[4];
+    var keyWords = row[3];
     var achievement = new Achievement(description, days, keyWords);
     achievements.push(achievement);
 });
