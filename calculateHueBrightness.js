@@ -15,7 +15,7 @@ var data = undefined;
 if (typeof setGlobal === "undefined") {
     // We're developing locally, initialize sample data.
     isDevelopmentEnvironment = true;
-    hueMinValue = 60;
+    hueMinValue = 75;
     hueMaxValue = 254;
     hueStartTimeMorning = "9.00";
     hueEndTimeMorning = "11.30";
