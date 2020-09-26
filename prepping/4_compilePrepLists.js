@@ -6,6 +6,13 @@ var userSelection = null;
 // ===========================================================================================
 // Step 1: Parse the data, store it in `data`.
 // ===========================================================================================
+
+if (isDevelopmentEnvironment) {
+    var step = "0";
+    console.log(step);
+} else {
+    setGlobal("STEP", step);
+}
 var data = undefined;
 if (typeof http_data === "undefined") {
     // We're developing locally, initialize sample data.
