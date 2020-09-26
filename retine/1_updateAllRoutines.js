@@ -12,7 +12,8 @@ if (typeof http_data === "undefined") {
           "majorDimension": "ROWS",
           "values": [
             [
-              "07:42", "Ochtend", "nvt", "00:17:15", "Ja", "", "Zorgen dat ik om 8:30 weg ben, tijd = 8:30 - duratie van routine." ], [ "", "", "Tanden poetsen" ], [ "", "", "Lenzen indoen ", "00:02:00" ], [ "", "", "Deo opdoen" ], [ "", "", "Parfum opdoen" ], [ "", "", "Aankleden", "00:01:00"
+              "07:42", "Ochtend", "nvt", "00:17:15", "Ja", "", "Zorgen dat ik om 8:30 weg ben, tijd = 8:30 - duratie van routine." ],
+              [ "", "", "Tanden poetsen" ], [ "", "", "Gesundheit: 1", "00:02:00" ], [ "", "", "Deo opdoen" ], [ "", "", "Parfum opdoen" ], [ "", "", "Aankleden", "00:01:00"
             ], [ "", "", "Eten (zie Project Gesundheit)", "00:10:00" ], [ "", "", "Pet opdoen", "00:02:00" ], [ "", "", "Mobiel, beurs, sleutels" ], [ "", "", "Prepping: Ochtend & middag" ], [], [], [ "07:41", "Ochtend voor fitness", "nvt", "00:18:24", "Ja", "Ochtend"
             ], [ "", "", "P: Fitness items meenemen", "00:01:00" ], [], [], [ "22:11", "Avond", "nvt", "00:03:27", "Ja", "", "Zorgen dat ik om 23:30 ga slapen, tijd = 23:30 - duratie van routine." ], [ "", "", "Kamer opruimen", "00:02:00" ], [ "", "", "Thermostaat lager zetten" ], [ "",
               "", "WC" ], [ "", "", "Lenzen uit doen" ], [ "", "", "Tanden poetsen" ], [ "", "", "Wekker(s) zetten", "00:01:00" ], [ "", "", "Gezichtscreme opdoen" ], [], [
@@ -21,8 +22,8 @@ if (typeof http_data === "undefined") {
     gesundheitData = JSON.parse("[{\"identifier\":1,\"time\":\"09:00\",\"foods\":[{\"quantity\":\"75\",\"unit\":\"g\",\"portion_size\":\"\",\"total_quantity\":\"75\",\"name\":\"Brinta\"},{\"quantity\":\"30\",\"unit\":\"g\",\"portion_size\":\"\",\"total_quantity\":\"30\",\"name\":\"Eiwitpoeder\"},{\"quantity\":\"230\",\"unit\":\"ml\",\"portion_size\":\"\",\"total_quantity\":\"200\",\"name\":\"Melk\"},{\"quantity\":\"1\",\"unit\":\"stuk\",\"portion_size\":\"20\",\"total_quantity\":\"20\",\"name\":\"Vitamine D pil (kruidvat)\"}]},{\"identifier\":2,\"time\":\"10:30\",\"foods\":[{\"quantity\":\"40\",\"unit\":\"g\",\"portion_size\":\"\",\"total_quantity\":\"83\",\"name\":\"Wortel\/Waspeen\"},{\"quantity\":\"120\",\"unit\":\"g\",\"portion_size\":\"\",\"total_quantity\":\"83\",\"name\":\"Tomaat\"},{\"quantity\":\"1\",\"unit\":\"stuk\",\"portion_size\":\"150\",\"total_quantity\":\"150\",\"name\":\"Appel (Jonagold)\"},{\"quantity\":\"1\",\"unit\":\"schepje\",\"portion_size\":\"3\",\"total_quantity\":\"3\",\"name\":\"Creatine\"},{\"quantity\":\"1\",\"unit\":\"stuk\",\"portion_size\":\"100\",\"total_quantity\":\"100\",\"name\":\"Kiwi (groene)\"}]},{\"identifier\":3,\"time\":\"12:00\",\"foods\":[{\"quantity\":\"6\",\"unit\":\"stuk\",\"portion_size\":\"30\",\"total_quantity\":\"180\",\"name\":\"Brood (volkoren)\"},{\"quantity\":\"2\",\"unit\":\"stuk\",\"portion_size\":\"15\",\"total_quantity\":\"30\",\"name\":\"Pindakaas (gemiddeld)\"},{\"quantity\":\"2\",\"unit\":\"stuk\",\"portion_size\":\"5\",\"total_quantity\":\"10\",\"name\":\"Jumbo Halvarine\"},{\"quantity\":\"1\",\"unit\":\"stuk\",\"portion_size\":\"125\",\"total_quantity\":\"125\",\"name\":\"Banaan\"},{\"quantity\":\"0.5\",\"unit\":\"stuk\",\"portion_size\":\"53\",\"total_quantity\":\"26.5\",\"name\":\"Ei (gekookt)\"}]},{\"identifier\":4,\"time\":\"15:00\",\"foods\":[{\"quantity\":\"1\",\"unit\":\"stuk\",\"portion_size\":\"125\",\"total_quantity\":\"125\",\"name\":\"Banaan\"},{\"quantity\":\"25\",\"unit\":\"g\",\"portion_size\":\"\",\"total_quantity\":\"25\",\"name\":\"Avocado\"},{\"quantity\":\"20\",\"unit\":\"g\",\"portion_size\":\"\",\"total_quantity\":\"20\",\"name\":\"Amandelen\"},{\"quantity\":\"10\",\"unit\":\"g\",\"portion_size\":\"\",\"total_quantity\":\"10\",\"name\":\"Walnoten\"}]},{\"identifier\":5,\"time\":\"18:00\",\"foods\":[{\"quantity\":\"65\",\"unit\":\"g\",\"portion_size\":\"\",\"total_quantity\":\"65\",\"name\":\"Kipfilet\"},{\"quantity\":\"50\",\"unit\":\"g\",\"portion_size\":\"\",\"total_quantity\":\"50\",\"name\":\"Meergranenrijst (gekookt)\"},{\"quantity\":\"50\",\"unit\":\"g\",\"portion_size\":\"\",\"total_quantity\":\"50\",\"name\":\"Broccoli (gekookt)\"},{\"quantity\":\"50\",\"unit\":\"g\",\"portion_size\":\"\",\"total_quantity\":\"50\",\"name\":\"Aardappelen (gekookt)\"},{\"quantity\":\"25\",\"unit\":\"ml\",\"portion_size\":\"\",\"total_quantity\":\"25\",\"name\":\"Mayonaise\"}]},{\"identifier\":6,\"time\":\"21:00\",\"foods\":[{\"quantity\":\"500\",\"unit\":\"g\",\"portion_size\":\"\",\"total_quantity\":\"500\",\"name\":\"Franse magere kwark\"},{\"quantity\":\"15\",\"unit\":\"g\",\"portion_size\":\"\",\"total_quantity\":\"15\",\"name\":\"Lijnzaad\"},{\"quantity\":\"15\",\"unit\":\"g\",\"portion_size\":\"\",\"total_quantity\":\"15\",\"name\":\"Chiazaad\"},{\"quantity\":\"10\",\"unit\":\"g\",\"portion_size\":\"\",\"total_quantity\":\"10\",\"name\":\"Zonnebloempitten\"},{\"quantity\":\"2\",\"unit\":\"kop\",\"portion_size\":\"200\",\"total_quantity\":\"400\",\"name\":\"Groene thee\"}]},{\"identifier\":7,\"time\":\"nvt\",\"foods\":[{\"quantity\":\"1500\",\"unit\":\"ml\",\"portion_size\":\"\",\"total_quantity\":\"1500\",\"name\":\"Water\"},{\"quantity\":\"0\",\"unit\":\"g\",\"portion_size\":\"\",\"total_quantity\":\"0\",\"name\":\"Snoep (zuur, gem.)\"}]}]");
 } else {
     //  We're in tasker, use the real data.
-    isDevelopmentEnvironment = false;
     data = JSON.parse(http_data);
+    isDevelopmentEnvironment = false;
     gesundheitData = JSON.parse(global('%MEALS'));
 }
 
@@ -118,9 +119,10 @@ data.values.forEach(function(row) {
         var actionName = row[2];
 
         if (actionName.startsWith(totalKeywordPrefix)) {
+            var mealIdentifier = actionName.split(totalKeywordPrefix)[1];
             var meal = getMealByIdentifier(mealIdentifier);
             meal.foods.forEach((food) => {
-                currentRoutine.actions.push(foodToPrepItemRowString(food));
+                currentRoutine.actions.push(foodToActionString(food));
             });
         } else {
             var action = new Action(actionName);
