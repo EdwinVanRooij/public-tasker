@@ -122,7 +122,7 @@ data.values.forEach(function(row) {
             var mealIdentifier = actionName.split(totalKeywordPrefix)[1];
             var meal = getMealByIdentifier(mealIdentifier);
             meal.foods.forEach((food) => {
-                currentRoutine.actions.push(foodToActionString(food));
+                currentRoutine.actions.push(new Action(foodToActionString(food)));
             });
         } else {
             var action = new Action(actionName);
