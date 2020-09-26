@@ -7,12 +7,6 @@ var userSelection = null;
 // Step 1: Parse the data, store it in `data`.
 // ===========================================================================================
 
-var step = "0";
-if (isDevelopmentEnvironment) {
-    console.log(step);
-} else {
-    setGlobal("STEP", step);
-}
 if (typeof setGlobal === "undefined") {
     // We're developing locally, initialize sample data.
     isDevelopmentEnvironment = true;
@@ -30,13 +24,6 @@ if (typeof setGlobal === "undefined") {
     allPrepLists = JSON.parse(global('%ALL_PREP_LISTS'));
     gesundheitData = JSON.parse(global('%MEALS'));
     userSelection = JSON.parse(global('%PREP_LIST_USER_SELECTION'));
-}
-
-step = "1";
-if (isDevelopmentEnvironment) {
-    console.log(step);
-} else {
-    setGlobal("STEP", step);
 }
 
 // Checks if the given PrepListItem exists in the given array of PrepListItems.
@@ -57,13 +44,6 @@ function setItemQuantityHigher(prepListItems, item) {
             prepListItem.quantity += item.quantity;
         }
     });
-}
-
-step = "2";
-if (isDevelopmentEnvironment) {
-    console.log(step);
-} else {
-    setGlobal("STEP", step);
 }
 
 // Remove all duplicate unique items.
@@ -98,13 +78,6 @@ function removeDuplicateUniqueItems(prepList) {
         }
     });
     prepList.items = resultItems;
-}
-
-step = "3";
-if (isDevelopmentEnvironment) {
-    console.log(step);
-} else {
-    setGlobal("STEP", step);
 }
 
 class PrepList {
@@ -155,7 +128,7 @@ function getMealByIdentifier(identifier) {
 }
 
 function foodToPrepItemRowString(food) {
-    var prefix = "   ";
+    var prefix = "&nbsp;&nbsp;&nbsp;&nbsp;";
     if (food.portion_size) {
         // This is a 'portie', so treat it as such
         return prefix + food.quantity + "x " + food.name;
@@ -168,13 +141,6 @@ function foodToPrepItemRowString(food) {
 // Combines the given prep lists into one huge prep list, according to the user selection.
 function compilePrepList(allPrepLists, userSelection) {
     var compiledPrepList = new PrepList("Compiled Prep List");
-
-step = "4";
-if (isDevelopmentEnvironment) {
-    console.log(step);
-} else {
-    setGlobal("STEP", step);
-}
 
     for (const [name, quantity] of Object.entries(userSelection)) {
         // name == "Fitness"
@@ -201,22 +167,8 @@ if (isDevelopmentEnvironment) {
         });
     }
 
-step = "5";
-if (isDevelopmentEnvironment) {
-    console.log(step);
-} else {
-    setGlobal("STEP", step);
-}
-
     // Now remove duplicates (adding to quantity if non-unique).
     removeDuplicateUniqueItems(compiledPrepList);
-
-step = "6";
-if (isDevelopmentEnvironment) {
-    console.log(step);
-} else {
-    setGlobal("STEP", step);
-}
 
     return compiledPrepList;
 }
