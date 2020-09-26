@@ -7,7 +7,7 @@ var userSelection = null;
 // Step 1: Parse the data, store it in `data`.
 // ===========================================================================================
 
-var step = "1";
+var step = "0";
 if (isDevelopmentEnvironment) {
     console.log(step);
 } else {
@@ -30,7 +30,7 @@ if (typeof http_data === "undefined") {
     isDevelopmentEnvironment = false;
     allPrepLists = JSON.parse(global('%ALL_PREP_LISTS'));
     gesundheitData = JSON.parse(global('%MEALS'));
-    userSelection = JSON.parse(global('%PREP_LIST_USER_SELECTION'))
+    userSelection = JSON.parse(global('%PREP_LIST_USER_SELECTION'));
 }
 
 step = "1";
