@@ -26,6 +26,13 @@ if (typeof http_data === "undefined") {
     userSelection = JSON.parse(global('%PREP_LIST_USER_SELECTION'))
 }
 
+if (isDevelopmentEnvironment) {
+    var step = "1";
+    console.log(step);
+} else {
+    setGlobal("STEP", step);
+}
+
 // Checks if the given PrepListItem exists in the given array of PrepListItems.
 function itemIsInArrayYet(prepListItems, prepListItemToMatch) {
     var resultBoolean = false;
@@ -44,6 +51,13 @@ function setItemQuantityHigher(prepListItems, item) {
             prepListItem.quantity += item.quantity;
         }
     });
+}
+
+if (isDevelopmentEnvironment) {
+    var step = "2";
+    console.log(step);
+} else {
+    setGlobal("STEP", step);
 }
 
 // Remove all duplicate unique items.
@@ -78,6 +92,13 @@ function removeDuplicateUniqueItems(prepList) {
         }
     });
     prepList.items = resultItems;
+}
+
+if (isDevelopmentEnvironment) {
+    var step = "3";
+    console.log(step);
+} else {
+    setGlobal("STEP", step);
 }
 
 class PrepList {
@@ -142,6 +163,13 @@ function foodToPrepItemRowString(food) {
 function compilePrepList(allPrepLists, userSelection) {
     var compiledPrepList = new PrepList("Compiled Prep List");
 
+if (isDevelopmentEnvironment) {
+    var step = "4";
+    console.log(step);
+} else {
+    setGlobal("STEP", step);
+}
+
     for (const [name, quantity] of Object.entries(userSelection)) {
         // name == "Fitness"
         // quantity == 1
@@ -167,8 +195,22 @@ function compilePrepList(allPrepLists, userSelection) {
         });
     }
 
+if (isDevelopmentEnvironment) {
+    var step = "5";
+    console.log(step);
+} else {
+    setGlobal("STEP", step);
+}
+
     // Now remove duplicates (adding to quantity if non-unique).
     removeDuplicateUniqueItems(compiledPrepList);
+
+if (isDevelopmentEnvironment) {
+    var step = "6";
+    console.log(step);
+} else {
+    setGlobal("STEP", step);
+}
 
     return compiledPrepList;
 }
