@@ -109,14 +109,14 @@ for (var i = 0; i < meals.length; i++) {
     if (isDevelopmentEnvironment) {
         console.log('MEAL_' + (i + 1) + '_TIME  ' +  meals[i].time)
         console.log('MEAL_' + (i + 1) + '_VALUE  ' + meals[i].toHtmlTable());
+        console.log('MEALS' + JSON.stringify(meals));
     } else {
         setGlobal('MEAL_' + (i + 1) + '_TIME', meals[i].time);
         setGlobal('MEAL_' + (i + 1) + '_VALUE', meals[i].toHtmlTable());
+        setGlobal('MEALS', JSON.stringify(meals));
     }
 }
 
-if (isDevelopmentEnvironment) {
-    console.log('MEALS' + JSON.stringify(meals));
-} else {
-    setGlobal('MEALS', JSON.stringify(meals));
-}
+//if (isDevelopmentEnvironment) {
+//} else {
+//}
