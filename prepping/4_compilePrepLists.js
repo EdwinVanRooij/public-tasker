@@ -78,7 +78,7 @@ class PrepListItem {
 }
 
 var mealKeyword = "Gesundheit";
-var totalKeywordPrefix = mealKeyword + ": ";
+var totalKeywordPrefix = "1x " + mealKeyword + ": ";
 
 class Meal {
     constructor(identifier, time) {
