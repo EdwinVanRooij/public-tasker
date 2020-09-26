@@ -7,8 +7,8 @@ var userSelection = null;
 // Step 1: Parse the data, store it in `data`.
 // ===========================================================================================
 
+var step = "1";
 if (isDevelopmentEnvironment) {
-    var step = "0";
     console.log(step);
 } else {
     setGlobal("STEP", step);
@@ -33,8 +33,8 @@ if (typeof http_data === "undefined") {
     userSelection = JSON.parse(global('%PREP_LIST_USER_SELECTION'))
 }
 
+step = "1";
 if (isDevelopmentEnvironment) {
-    var step = "1";
     console.log(step);
 } else {
     setGlobal("STEP", step);
@@ -60,8 +60,8 @@ function setItemQuantityHigher(prepListItems, item) {
     });
 }
 
+step = "2";
 if (isDevelopmentEnvironment) {
-    var step = "2";
     console.log(step);
 } else {
     setGlobal("STEP", step);
@@ -101,8 +101,8 @@ function removeDuplicateUniqueItems(prepList) {
     prepList.items = resultItems;
 }
 
+step = "3";
 if (isDevelopmentEnvironment) {
-    var step = "3";
     console.log(step);
 } else {
     setGlobal("STEP", step);
@@ -170,8 +170,8 @@ function foodToPrepItemRowString(food) {
 function compilePrepList(allPrepLists, userSelection) {
     var compiledPrepList = new PrepList("Compiled Prep List");
 
+step = "4";
 if (isDevelopmentEnvironment) {
-    var step = "4";
     console.log(step);
 } else {
     setGlobal("STEP", step);
@@ -202,8 +202,8 @@ if (isDevelopmentEnvironment) {
         });
     }
 
+step = "5";
 if (isDevelopmentEnvironment) {
-    var step = "5";
     console.log(step);
 } else {
     setGlobal("STEP", step);
@@ -212,8 +212,8 @@ if (isDevelopmentEnvironment) {
     // Now remove duplicates (adding to quantity if non-unique).
     removeDuplicateUniqueItems(compiledPrepList);
 
+step = "6";
 if (isDevelopmentEnvironment) {
-    var step = "6";
     console.log(step);
 } else {
     setGlobal("STEP", step);
