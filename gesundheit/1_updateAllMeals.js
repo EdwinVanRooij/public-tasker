@@ -31,6 +31,7 @@ if (typeof http_data === "undefined") {
     //  We're in tasker, use the real data.
     isDevelopmentEnvironment = false;
     data = JSON.parse(http_data);
+    setGlobal("MEALS_DATA", data);
 }
 
 class Meal {

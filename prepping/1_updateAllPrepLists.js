@@ -41,6 +41,7 @@ if (typeof http_data === "undefined") {
     //  We're in Tasker, use the real data.
     isDevelopmentEnvironment = false;
     data = JSON.parse(http_data);
+    setGlobal("PREPPING_DATA", data);
 }
 
 function turnCommaSeparatedIntoArray(inputString) {
