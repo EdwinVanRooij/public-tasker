@@ -190,11 +190,11 @@ expandInheritance(allPrepLists);
 // Now remove all duplicate unique items.
 removeDuplicateUniqueItems(allPrepLists);
 
-//console.log(allPrepLists);
 var globalKey = "ALL_PREP_LISTS";
 if (isDevelopmentEnvironment) {
     console.log(allPrepLists);
     console.log("Setting global variable " + globalKey);
+    console.log(JSON.stringify(allPrepLists));
 } else {
     // We're in Tasker, set the global variable.
     setGlobal(globalKey, JSON.stringify(allPrepLists));

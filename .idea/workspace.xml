@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f10f2a88-2191-4ad6-bf66-d9eaa82a272a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gesundheit/1_updateAllMeals.js" beforeDir="false" afterPath="$PROJECT_DIR$/gesundheit/1_updateAllMeals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prepping/1_updateAllPrepLists.js" beforeDir="false" afterPath="$PROJECT_DIR$/prepping/1_updateAllPrepLists.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/retine/1_updateAllRoutines.js" beforeDir="false" afterPath="$PROJECT_DIR$/retine/1_updateAllRoutines.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

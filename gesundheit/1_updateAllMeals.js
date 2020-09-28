@@ -117,6 +117,3 @@ for (var i = 0; i < meals.length; i++) {
     }
 }
 
-//if (isDevelopmentEnvironment) {
-//} else {
-//}
