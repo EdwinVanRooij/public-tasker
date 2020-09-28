@@ -10,8 +10,19 @@ if (typeof http_data === "undefined") {
     data = {
           "range": "'Prep Lists & Event Lists'!G17:J242", "majorDimension": "ROWS", "values": [
           [ "Douchen", "nvt", "nvt" ],
-          [ "", "T: Zeep gebruiken" ],
-          [ "", "T: Shampoo gebruiken" ],
+          [ "", "C1 groente: Waspenen (500g)" ],
+          [ "", "C1 groente: Tomaten (500g)" ],
+          [ "", "C2 fruit: Bananen (14x)" ],
+          [ "", "C2 fruit: Appels (Jonagold/Evelina, 9x)" ],
+          [ "", "C2 fruit: Kiwi's (6x)" ],
+          [ "", "C2 fruit: Avocado (1x, 180g)" ],
+          [ "", "C3 zuivel: Magere franse kwark (7x, 500g)" ],
+          [ "", "C9 Jumbo: Brinta (4x)" ],
+          [ "", "C10 nvt: Volkorenbrood" ],
+          [ "", "C9 Jumbo: Pindakaas" ],
+          [ "", "C8 etc: Eieren (12x, 1 doos)" ],
+          [ "", "C9 Jumbo: Dipsaus mild (4x)" ],
+          [ "", "C9 Jumbo: Rijstwafels (4x)" ],
           [ "", "N: Gezicht scrubben", "Max 2x per week, het liefst maandag & donderdag" ],
           [ "", "N: Gezichtscreme gebruiken", "Elke keer" ],
             [], [ "Naar fitness gaan", "nvt", "nvt" ], [ "", "V: Oortjes meenemen" ], [ "", "V: Euro meenemen" ], [ "", "V: Fitness pas meenemen" ], [], [ "Op stap gaan", "nvt", "nvt", "Douchen" ], [ "", "V: Oordopjes meenemen" ], [ "", "V: Tanden poetsen" ], [ "", "V: Listerine gebruiken" ], [ "", "V: Ketting poetsen & omdoen" ], [ "", "V: Mobiel opladen" ], [ "", "V: P/E: Douchen" ], [ "", "V: Scheerapparaat opladen" ], [ "", "V: Oksels, beneden, gezicht (scheren/trimmen)" ],
@@ -119,7 +130,53 @@ function expandInheritance(eventLists) {
 expandInheritance(eventLists);
 
 // ===========================================================================================
-// Step 5: Generate all variables for each EventList.
+// Step 5: Prepare the data for sorting.
+// ===========================================================================================
+var categoryRegex = /^C\d+\s.*:\s/; // e.g. "C3 zuivel: Magere franse kwark"
+var uncategorisedPrefix = "zzzzz";
+var uncategorisedSplitCharacter = " "
+var uncategorisedRegex = /^zzzzz\s/;
+
+eventLists.forEach(function(eventList){
+    eventList.actions.forEach(function(action){
+        var actionMatches = categoryRegex.test(action.name);
+        if (actionMatches === true) {
+            // This item will be categorised.
+        } else {
+            // This item will not be categorised. Add the prefix if it's not there yet.
+            var prefixMatches = uncategorisedRegex.test(action.name);
+            if (prefixMatches === false) {
+                action.name = uncategorisedPrefix + uncategorisedSplitCharacter + action.name;
+            }
+        }
+    });
+});
+
+// ===========================================================================================
+// Step 6: Sort the data.
+// ===========================================================================================
+
+eventLists.forEach(function(eventList){
+    eventList.actions.sort(function(actionA, actionB){
+        if(actionA.name < actionB.name) { return -1; }
+        if(actionA.name > actionB.name) { return 1; }
+        return 0;
+    })
+});
+
+// ===========================================================================================
+// Step 7: Cleanup the sort data.
+// ===========================================================================================
+
+eventLists.forEach(function(eventList){
+    eventList.actions.forEach(function(action){
+        action.name = action.name.replace(categoryRegex, "");
+        action.name = action.name.replace(uncategorisedRegex, "");
+    });
+});
+
+// ===========================================================================================
+// Step 8: Generate all variables for each EventList.
 // ===========================================================================================
 function renderEventListToHtml(eventList) {
     var result = "<table>";
