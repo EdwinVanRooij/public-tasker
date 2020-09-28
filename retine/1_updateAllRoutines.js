@@ -24,7 +24,7 @@ if (typeof http_data === "undefined") {
 } else {
     //  We're in tasker, use the real data.
     data = JSON.parse(http_data);
-    setGlobal("RETINE_DATA", data);
+    setGlobal("RAW_DATA_RETINE", JSON.stringify(data));
     isDevelopmentEnvironment = false;
     gesundheitData = JSON.parse(global('%MEALS'));
     preppingData = JSON.parse(global('%ALL_PREP_LISTS'));
