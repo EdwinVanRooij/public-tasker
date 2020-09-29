@@ -8,16 +8,8 @@ function formatToHtml(prepList) {
         iteration ++;
         result += `<tr><td>
                         <input type="checkbox" id="${iteration}" name="${iteration}" value="${iteration}">
-                        `;
-        if (typeof item === 'string' || item instanceof String) {
-            result += `<label for="${iteration}" data-content="${item}">${item}</label>
-                        </td>
-                    </tr>`;
-        } else {
-            result += `<label for="${iteration}" data-content="${item.quantity}x ${item.name}">${item.quantity}x ${item.name}</label>
-                        </td>
-                    </tr>`;
-        }
+                        <label for="${iteration}" data-content="${item}">${item}</label>
+                   </td></tr>`;
     });
     result += "</table>";
     return result;
