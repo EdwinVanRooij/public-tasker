@@ -94,6 +94,8 @@ function prepListItemToActionString(prepListItem) {
     return prefix + prepListItem.quantity + "x " + prepListItem.name;
 }
 
+var categoryRegex = /^C\d+\s.*:\s/; // e.g. "C1 toilettas: Tandenborstel"
+
 var currentRoutine = null;
 data.values.forEach(function(row) {
     if (row[0]) {
@@ -128,6 +130,7 @@ data.values.forEach(function(row) {
             var prepList = getPrepListByName(prepListName);
             if (prepList) {
                 prepList.items.forEach((item) => {
+                    item.name = item.name.replace(categoryRegex, "")
                     currentRoutine.actions.push(new Action(prepListItemToActionString(item)));
                 });
             } else {
