@@ -50,6 +50,18 @@ class Meal {
     }
 }
 
+function allMealsToTable(meals) {
+var result = "";
+
+meals.forEach((meal) => {
+result += "<strong>" + meal.identifier + " (" + meal.time +")" + "</strong>";
+result += meal.toHtmlTable();
+result += "</br>";
+});
+
+return result;
+}
+
 class Food {
     constructor(quantity, unit, portion_size, total_quantity, name) {
         this.quantity = quantity;
@@ -111,10 +123,12 @@ for (var i = 0; i < meals.length; i++) {
         console.log('MEAL_' + (i + 1) + '_TIME  ' +  meals[i].time)
         console.log('MEAL_' + (i + 1) + '_VALUE  ' + meals[i].toHtmlTable());
         console.log('MEALS' + JSON.stringify(meals));
+        console.log('MEALS_TABLE' + allMealsToTable(meals));
     } else {
         setGlobal('MEAL_' + (i + 1) + '_TIME', meals[i].time);
         setGlobal('MEAL_' + (i + 1) + '_VALUE', meals[i].toHtmlTable());
         setGlobal('MEALS', JSON.stringify(meals));
+        setGlobal('MEALS_TABLE', allMealsToTable(meals));
     }
 }
 
