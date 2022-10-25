@@ -1,76 +1,82 @@
 <style>
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:600&display=swap');
-* {
-  box-sizing: border-box;
-}
-*::before, *::after {
-  box-sizing: border-box;
-}
-body {
-  font-family: 'Source Sans Pro', sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  min-height: 100vh;
-}
-input[type="checkbox"] {
-  position: relative;
-  width: 16px;
-  height: 10px;
-  color: #363839;
-  border: 1px solid #bdc1c6;
-  border-radius: 4px;
-  appearance: none;
-  outline: 0;
-  cursor: pointer;
-  transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
-}
-input[type="checkbox"]::before {
-  position: absolute;
-  content: '';
-  display: block;
-  top: 2px;
-  left: 7px;
-  width: 8px;
-  height: 14px;
-  border-style: solid;
-  border-color: #fff;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-  opacity: 0;
-}
-input[type="checkbox"]:checked {
-  color: #fff;
-  border-color: #06842c;
-  background: #06842c;
-}
-input[type="checkbox"]:checked::before {
-  opacity: 1;
-}
-input[type="checkbox"]:checked ~ label::before {
-<!--  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);-->
-}
-label {
-  position: relative;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 0 0.25em 0;
-  user-select: none;
-}
-label::before {
-  position: absolute;
-  content: attr(data-content);
-  color: #9c9e9f;
-  clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
-  text-decoration: line-through;
-  text-decoration-thickness: 3px;
-  text-decoration-color: #363839;
-  transition: clip-path 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
+  @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:600&display=swap");
+  * {
+    box-sizing: border-box;
+  }
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Source Sans Pro", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+    font-size: 12px;
+  }
+  input[type="checkbox"] {
+    position: relative;
+    width: 16px;
+    height: 10px;
+    color: #363839;
+    border: 1px solid #bdc1c6;
+    border-radius: 4px;
+    appearance: none;
+    outline: 0;
+    cursor: pointer;
+    transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+  }
+  input[type="checkbox"]::before {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 2px;
+    left: 7px;
+    width: 8px;
+    height: 14px;
+    border-style: solid;
+    border-color: #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+  input[type="checkbox"]:checked {
+    color: #fff;
+    border-color: #06842c;
+    background: #06842c;
+    opacity: 0.2;
+  }
+  input[type="checkbox"]:checked::before {
+    opacity: 1;
+  }
+  input[type="checkbox"]:checked ~ label::before {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
 
-.swal2-popup {
+  input[type="checkbox"]:checked ~ label {
+    /* position: absolute;
+    content: attr(data-content);
+    color: #9c9e9f;
+    clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);*/
+    opacity: 0.2;
+    transition: clip-path 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    text-decoration: line-through;
+    text-decoration-thickness: 5px;
+    text-decoration-color: #363839;
+  }
+
+  label {
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 0.25em 0;
+    user-select: none;
+  }
+
+  .swal2-popup {
     display: none;
     position: relative;
     box-sizing: border-box;
@@ -80,189 +86,202 @@ label::before {
     max-width: 100%;
     padding: 1.25em;
     border: none;
-    border-radius: .3125em;
+    border-radius: 0.3125em;
     background: #fff;
     font-family: inherit;
     font-size: 1rem;
-}
+  }
 
-body {
+  body {
     padding-bottom: 2em;
     background-color: #f2f4f6;
     color: #555;
     text-align: center;
     margin: 0;
     font-size: 1rem;
-}
+  }
 
-table {
+  table {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-.swal2-header {
+  }
+  .swal2-header {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+  }
 
-.round-button {border-radius: 50%;}
-.plus-min-button {
-  background-color: #1abc9c;
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  display: inline-block;
-  margin: 2px 2px;
-  position: relative;
-  border: none;
-  width: 20px;
-  height; 20px;
-  color: #FFFFFF;
-  text-align: center;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  text-decoration: none;
-  overflow: hidden;
-  cursor: pointer;
-}
+  .round-button {
+    border-radius: 50%;
+  }
+  .plus-min-button {
+    background-color: #1abc9c;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    margin: 2px 2px;
+    position: relative;
+    border: none;
+    width: 20px;
+    height: 20px;
+    color: #ffffff;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+  }
 
-.plus-min-button:active {
-  background-color: #1abc9c;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
+  .plus-min-button:active {
+    background-color: #1abc9c;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
 
-.compile-button {
-  background-color: #1abc9c;
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 2px 2px;
-  padding: 8px 8px;
-  position: relative;
-  border: none;
-  color: #fff;
-  text-align: center;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  text-decoration: none;
-  overflow: hidden;
-  cursor: pointer;
-  background-color: #1abc9c;
-  border-radius: 5px;
-  font-size: 14px;
-}
+  .compile-button {
+    background-color: #1abc9c;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 2px 2px;
+    padding: 8px 8px;
+    position: relative;
+    border: none;
+    color: #fff;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #1abc9c;
+    border-radius: 5px;
+    font-size: 14px;
+  }
 
+  .compile-button:active {
+    background-color: #1abc9c;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
 
-.compile-button:active {
-  background-color: #1abc9c;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-
-hr {
+  hr {
     border: none;
     height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 138, 106, 0.75), rgba(0, 0, 0, 0))
-}
-
-
-
+    background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 138, 106, 0.75),
+      rgba(0, 0, 0, 0)
+    );
+  }
 </style>
-<div aria-labelledby="swal2-title" aria-describedby="swal2-content"
-     class="swal2-popup swal2-modal swal2-icon-success swal2-show" tabindex="-1" role="dialog" aria-live="assertive"
-     aria-modal="true" style="display: flex;">
-    <div class="swal2-header">
-        <div class="swal2-content">
-            <div id="swal2-content" class="swal2-html-container" style="display: block;">
-                <table style="width:100%">
-
-                    %HTML_ROWS_PREP_LIST
-
-                </table>
-                <hr>
-                <button class="compile-button" onclick="onCompileClick()">Compile</button>
-            </div>
-        </div>
+<div
+  aria-labelledby="swal2-title"
+  aria-describedby="swal2-content"
+  class="swal2-popup swal2-modal swal2-icon-success swal2-show"
+  tabindex="-1"
+  role="dialog"
+  aria-live="assertive"
+  aria-modal="true"
+  style="display: flex"
+>
+  <div class="swal2-header">
+    <div class="swal2-content">
+      <div
+        id="swal2-content"
+        class="swal2-html-container"
+        style="display: block"
+      >
+        <table style="width: 100%">
+          %HTML_ROWS_PREP_LIST
+        </table>
+        <hr />
+        <button class="compile-button" onclick="onCompileClick()">
+          Compile
+        </button>
+      </div>
     </div>
+  </div>
 </div>
 
 <script>
-    var userSelection = {
-    };
+  var userSelection = {};
 
-    function onCompileClick() {
-        flash("Setting selection...");
-        setGlobal("PREP_LIST_USER_SELECTION", JSON.stringify(userSelection));
-        flash("Done.");
+  function onCompileClick() {
+    flash("Setting selection...");
+    setGlobal("PREP_LIST_USER_SELECTION", JSON.stringify(userSelection));
+    flash("Done.");
+  }
+
+  function onSelectionChanged(prepListName, newQuantity) {
+    if (newQuantity == 0) {
+      if (prepListName in userSelection) {
+        delete userSelection[prepListName];
+      }
+    } else {
+      userSelection[prepListName] = newQuantity;
+    }
+    console.log(userSelection);
+  }
+
+  function getPrepListNameFromElementId(elementId) {
+    return elementId.split("-")[1];
+  }
+
+  function onCheckClicked(checkboxId, spanId) {
+    var isCheckedNow = document.getElementById(checkboxId).checked;
+
+    var newQuantity = 0;
+    if (isCheckedNow) {
+      // Case 1: Was not checked, now is checked, set number to 1.
+      newQuantity = 1;
+      document.getElementById(spanId).innerHTML = newQuantity;
+    } else {
+      // Case 2: Was checked, is not checked now, set number to 0.
+      document.getElementById(spanId).innerHTML = newQuantity;
     }
 
-    function onSelectionChanged(prepListName, newQuantity) {
-        if (newQuantity == 0) {
-            if (prepListName in userSelection) {
-                delete userSelection[prepListName];
-            }
-        } else {
-            userSelection[prepListName] = newQuantity;
-        }
-        console.log(userSelection);
+    onSelectionChanged(getPrepListNameFromElementId(spanId), newQuantity);
+  }
+
+  function subtractOneFrom(checkboxId, spanId) {
+    var currentNumber = parseInt(document.getElementById(spanId).innerHTML);
+
+    var newQuantity = 0;
+
+    // If the number will be 0 or lower now, make sure the checkbox is turned off and the number resets to 0.
+    if (currentNumber - 1 <= 0) {
+      document.getElementById(checkboxId).checked = false;
+      document.getElementById(spanId).innerHTML = newQuantity;
+    } else {
+      // No special cases, just subtract one.
+      newQuantity = currentNumber - 1;
+      document.getElementById(spanId).innerHTML = newQuantity;
     }
 
-    function getPrepListNameFromElementId(elementId) {
-        return elementId.split('-')[1];
+    onSelectionChanged(getPrepListNameFromElementId(spanId), newQuantity);
+  }
+
+  function addOneTo(checkboxId, spanId) {
+    var currentNumber = parseInt(document.getElementById(spanId).innerHTML);
+
+    var newQuantity = 0;
+
+    // If the number will be higher than 0 now, make sure the checkbox is turned on.
+    if (currentNumber + 1 >= 1) {
+      document.getElementById(checkboxId).checked = true;
+      newQuantity = currentNumber + 1;
+      document.getElementById(spanId).innerHTML = newQuantity;
     }
 
-    function onCheckClicked(checkboxId, spanId) {
-        var isCheckedNow = document.getElementById(checkboxId).checked;
-
-        var newQuantity = 0;
-        if (isCheckedNow) {
-            // Case 1: Was not checked, now is checked, set number to 1.
-            newQuantity = 1;
-            document.getElementById(spanId).innerHTML = newQuantity;
-        } else {
-            // Case 2: Was checked, is not checked now, set number to 0.
-            document.getElementById(spanId).innerHTML = newQuantity;
-        }
-
-        onSelectionChanged(getPrepListNameFromElementId(spanId), newQuantity);
-    }
-
-    function subtractOneFrom(checkboxId, spanId) {
-        var currentNumber = parseInt(document.getElementById(spanId).innerHTML);
-
-        var newQuantity = 0;
-
-        // If the number will be 0 or lower now, make sure the checkbox is turned off and the number resets to 0.
-        if (currentNumber - 1 <= 0) {
-            document.getElementById(checkboxId).checked = false;
-            document.getElementById(spanId).innerHTML = newQuantity;
-        } else {
-            // No special cases, just subtract one.
-            newQuantity = currentNumber -1;
-            document.getElementById(spanId).innerHTML = newQuantity;
-        }
-
-        onSelectionChanged(getPrepListNameFromElementId(spanId), newQuantity);
-    }
-
-    function addOneTo(checkboxId, spanId) {
-        var currentNumber = parseInt(document.getElementById(spanId).innerHTML);
-
-        var newQuantity = 0;
-
-        // If the number will be higher than 0 now, make sure the checkbox is turned on.
-        if (currentNumber +1 >= 1) {
-            document.getElementById(checkboxId).checked = true;
-            newQuantity = currentNumber +1;
-            document.getElementById(spanId).innerHTML = newQuantity;
-        }
-
-        onSelectionChanged(getPrepListNameFromElementId(spanId), newQuantity);
-    }
+    onSelectionChanged(getPrepListNameFromElementId(spanId), newQuantity);
+  }
 </script>
