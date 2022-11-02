@@ -54,10 +54,7 @@ function removeTrailingDashes(prepList) {
   var resultItems = [];
 
   prepList.items.forEach(function (item) {
-    if (
-      typeof item === "string" ||
-      (item instanceof String && item === "---")
-    ) {
+    if (typeof item === "string" && item instanceof String && item === "---") {
       return;
     }
 
