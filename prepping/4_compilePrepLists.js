@@ -50,20 +50,6 @@ function setItemQuantityHigher(prepListItems, item) {
   });
 }
 
-function removeTrailingDashes(prepList) {
-  var resultItems = [];
-
-  prepList.items.forEach(function (item) {
-    if (typeof item === "string" && item instanceof String && item === "---") {
-      return;
-    }
-
-    resultItems.push(item);
-  });
-
-  prepList.items = resultItems;
-}
-
 // Remove all duplicate unique items.
 function removeDuplicateUniqueItems(prepList) {
   var resultItems = [];
@@ -167,8 +153,6 @@ function compilePrepList(allPrepLists, userSelection) {
       }
     });
   }
-
-  removeTrailingDashes(compiledPrepList);
 
   // Now remove duplicates (adding to quantity if non-unique).
   removeDuplicateUniqueItems(compiledPrepList);

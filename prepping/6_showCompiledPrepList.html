@@ -341,13 +341,15 @@ table {
         const newElementIndex = currentElementIndex + 1;
         const newElement = inputElements.at(newElementIndex);
 
-        if (newElement.lastElementChild.textContent.startsWith("   ")) {
-            console.log('Setting element below', newElement)
-            newElement.firstElementChild.checked = checked;
-            checkAllBelowInCurrentGroupIncludingDashes(newElementIndex, checked);
-        } else if (newElement.lastElementChild.textContent.startsWith("---")) {
-            console.log('Setting dashes below', newElement)
-            newElement.firstElementChild.checked = checked;
+        if (newElement) {
+            if (newElement.lastElementChild.textContent.startsWith("   ")) {
+                console.log('Setting element below', newElement)
+                newElement.firstElementChild.checked = checked;
+                checkAllBelowInCurrentGroupIncludingDashes(newElementIndex, checked);
+            } else if (newElement.lastElementChild.textContent.startsWith("---")) {
+                console.log('Setting dashes below', newElement)
+                newElement.firstElementChild.checked = checked;
+            }
         }
     }
 

@@ -326,8 +326,8 @@ body {
 
     %par1
 
-<!-- 
-<table><tr><td>
+
+<!-- <table><tr><td>
                         <input type="checkbox" id="1" name="1" value="1">
                         <label for="1" data-content="Kamer opruimen">Kamer opruimen</label>
                     </td>
@@ -391,10 +391,6 @@ body {
                         <input type="checkbox" id="16" name="16" value="16">
                         <label for="16" data-content="&nbsp;&nbsp;&nbsp;&nbsp;Test 3">&nbsp;&nbsp;&nbsp;&nbsp;Test 3</label>
                     </td>
-                </tr><tr><td>
-                        <input type="checkbox" id="17" name="17" value="17">
-                        <label for="17" data-content="Gezichtscreme opdoen">Gezichtscreme opdoen</label>
-                    </td>
                 </tr>
                 </table> -->
 
@@ -418,13 +414,15 @@ body {
         const newElementIndex = currentElementIndex + 1;
         const newElement = inputElements.at(newElementIndex);
 
-        if (newElement.lastElementChild.textContent.startsWith("   ")) {
-            console.log('Setting element below', newElement)
-            newElement.firstElementChild.checked = checked;
-            checkAllBelowInCurrentGroupIncludingDashes(newElementIndex, checked);
-        } else if (newElement.lastElementChild.textContent.startsWith("---")) {
-            console.log('Setting dashes below', newElement)
-            newElement.firstElementChild.checked = checked;
+        if (newElement) {
+            if (newElement.lastElementChild.textContent.startsWith("   ")) {
+                console.log('Setting element below', newElement)
+                newElement.firstElementChild.checked = checked;
+                checkAllBelowInCurrentGroupIncludingDashes(newElementIndex, checked);
+            } else if (newElement.lastElementChild.textContent.startsWith("---")) {
+                console.log('Setting dashes below', newElement)
+                newElement.firstElementChild.checked = checked;
+            }
         }
     }
 
