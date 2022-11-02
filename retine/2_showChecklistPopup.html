@@ -458,8 +458,6 @@ body {
     for (const [index, inputElement] of inputElements.entries()) {
         inputElement.addEventListener('change', (event) => {
             const element = event.target;
-            console.log(element)
-            console.log(event)
             if (inputElements[index].lastElementChild.textContent.startsWith("   ")) {
                 setGroupState(index, element.checked);
             }
@@ -471,9 +469,5 @@ body {
             }
         });
     }
-
-    // const middleElement = inputElements.at(10);
-    // checkAllAboveInCurrentGroup(middleElement);
-    // checkAllBelowInCurrentGroupIncludingDashes(middleElement);
 </script>
 
